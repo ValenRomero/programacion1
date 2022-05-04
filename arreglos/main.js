@@ -37,7 +37,7 @@ console.log(helados)
 helados.shift()
 console.log(helados)
 
-// commo encontrar los indices de un elemento de un array 
+// como encontrar los indices de un elemento de un array 
 let indice = helados.indexOf("banana split")
 console.log(`
     posicion del elemento banana split = ${indice}
