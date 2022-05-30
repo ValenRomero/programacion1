@@ -1,19 +1,14 @@
-export default class triangulo {
-    base;
-    altura;
+export default class Triangulo {
 
-    constructor(){
-
+    constructor(b,a){
+        this.base = b 
+        this.altura = a 
     }
 
     calcular (){
-        this.base = 'a'
-        this.altura = 'b'
 
-        console.log(`
-            base: ${this.base}
-            altura: ${this.altura}
-        
-        `)
+       const operacion = (this.base*this.altura)/2
+
+       return operacion
     }
 }
