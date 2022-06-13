@@ -5,8 +5,8 @@ async function obtener_datos() {
   let totales_columnas = []
   dato_final.forEach(element => {
     let columnas = `
-        <div class="col>
-         <div class="card" style="width: 18rem;">
+        <div class="col-lg-3">
+         <div class="card" >
             <ul class="list-group list-group-flush">
             <li class="list-group-item">${element.casa.nombre}</li>
             <li class="list-group-item">${element.casa.compra}</li>
