@@ -8,6 +8,7 @@
     <title>localstorak</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -50,10 +51,28 @@
                     <tbody id="tbody">
                     </tbody>
                 </table>
+                <div id="mymodal" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Eliminar</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Está seguro de llevar ejecutar esta acción?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button id="btn_eliminar" type="button" class="btn btn-danger">Eliminar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
 
     <script src="main.js" type="module"></script>
+    <script src="auxiliares.js"></script>
 </body>
 </html>

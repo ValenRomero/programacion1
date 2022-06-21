@@ -1,4 +1,5 @@
-export default class Cliente {
+export default class Cliente 
+{
     constructor(nom,ape,dni){
         this.nombre = nom
         this.apellido = ape
@@ -35,14 +36,15 @@ export default class Cliente {
         let listado_clientes = JSON.parse(localStorage.getItem("listado_cliente"))
 
         let filas = []
-        listado_clientes.forEach(element,index => {
+        listado_clientes.forEach( (element,index) => {
             let fila = `
                      <tr>
                      <td>${element.nombre}</td>
                      <td>${element.apellido}</td>
                      <td>${element.dni}</td>
                      <td>
-                        <button onclick="eliminar_cliente(${index})" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></butto>
+                        <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></butto>
+                        <button onclick="editar(${index})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></butto>
                     </td>
                      </tr>`
                      
@@ -53,11 +55,21 @@ export default class Cliente {
     }
 
     eliminar_cliente(index){
-        let lista_clientes = json.parse(localStorage.getItem("listado_cliente"))
+        let lista_clientes = JSON.parse(localStorage.getItem("listado_cliente"))
         lista_clientes.splice(index,1)
 
         localStorage.setItem("listado_cliente", JSON.stringify(lista_clientes))
 
         this.obtener_cliente()
+    }
+
+    actualizar_cliente(index){
+      let listado_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
+
+      listado_clientes[index].nombre = document.getElementById("inp_nombre").value
+      listado_clientes[index].apellido = document.getElementById("inp_apellido").value
+      listado_clientes[index].dni = document.getElementById("inp_dni").value
+
+     JSON.setItem(localStorage.setItem("listado_clientes",listado_clientes))
     }
 }
