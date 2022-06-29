@@ -29,6 +29,7 @@ export default class Cliente
         }
 
         this.obtener_cliente()
+        this.vaciar_formulario()
 
     }
 
@@ -64,12 +65,23 @@ export default class Cliente
     }
 
     actualizar_cliente(index){
-      let listado_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
+      let listado_clientes = JSON.parse(localStorage.getItem("listado_cliente"))
 
       listado_clientes[index].nombre = document.getElementById("inp_nombre").value
       listado_clientes[index].apellido = document.getElementById("inp_apellido").value
       listado_clientes[index].dni = document.getElementById("inp_dni").value
 
-     JSON.setItem(localStorage.setItem("listado_clientes",listado_clientes))
+      localStorage.setItem("listado_cliente",JSON.stringify(listado_clientes))
+
+      this.obtener_cliente()
+
+      document.getElementById("btn-guardar").style.display = "block"
+      document.getElementById("btn_actualizar").style.display ="none"
+      this.vaciar_formulario()
+    }
+
+    vaciar_formulario ()
+    {
+        document.getElementById("form_cliente").reset()
     }
 }

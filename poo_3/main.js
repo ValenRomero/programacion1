@@ -34,3 +34,4 @@ function actualizar ()
     let cliente = new Cliente()
     cliente.actualizar_cliente(index)
 }
+document.getElementById("btn_actualizar").addEventListener("click",actualizar)
