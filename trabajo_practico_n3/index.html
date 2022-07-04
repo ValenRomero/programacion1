@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -48,24 +50,64 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-4">
+              <form>
                 <div class="mb-3">
-                    <label class="form-label">Hamburguesa</label>
-                    <input id="inp_nombre" class="form-control" type="text" >
+                    <label class="form-label">Descripcion de producto</label>
+                    <input id="inp_descripcion" class="form-control" type="text" >
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Gaseosa</label>
-                    <input id="inp_nombre" class="form-control" type="text" >
+                    <label class="form-label">Precio de producto</label>
+                    <input id="inp_precio" class="form-control" type="text" >
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Precio</label>
-                    <input id="inp_nombre" class="form-control" type="text" >
+                    <label class="form-label">URL imagen proucto</label>
+                    <input id="inp_imagen" class="form-control" type="text" >
                 </div>
-
+                
+                <div class="mb-3">
+                  <label class="form-label">Detalle</label>
+                  <input id="inp_detalle" class="form-control" type="text" >
+              </div>
+              </form>
+              <button  id="btn-guardar" class="btn btn-success">Guardar</button>
             </div>
+            <div class="col-lg-8">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Numero</th>
+                          <th>Imagen</th>
+                          <th>Descripcion</th>
+                          <th>Precio</th>
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody">
+                  </tbody>
+              </table>
+              <div id="mymodal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Eliminar</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Está seguro de llevar ejecutar esta acción?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button id="btn_eliminar" type="button" class="btn btn-danger">Eliminar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
+
+      <script src="main.js" type="module"></script>
 
     
 </body>

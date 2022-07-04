@@ -6,7 +6,8 @@ export default class Cliente
         this.dni = dni
     }
 
-    guardar_cliente(){
+    guardar_cliente()
+    {
 
         let nuevo_cliente = {
             nombre: this.nombre,
