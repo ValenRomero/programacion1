@@ -54,7 +54,8 @@ export default class Hamburguesa
                          <td>${element.precio}</td>
                          <td>
                             <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></butto>
-                        </td>
+                            <button onclick="editar(${index})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></butto>
+                            </td>
                          </tr>`
                          
                 filas.push(fila)
@@ -71,6 +72,28 @@ export default class Hamburguesa
         localStorage.setItem("menu", JSON.stringify(menu_principal))
 
         this.obtener_cliente()
+    }
+
+    actualizar_cliente(index){
+        let menu_principal = JSON.parse(localStorage.getItem("menu"))
+
+        document.getElementById("inp_descripcion").value = menu_principal[index].descirpcion
+        document.getElementById("inp_precio").value = menu_principal[index].precio
+        document.getElementById("inp_imagen").value = menu_principal[index].imagen
+        document.getElementById("inp_detalle").value = menu_principal[index].detalle
+  
+        localStorage.setItem("menu",JSON.stringify(menu_principal))
+  
+        this.obtener_cliente()
+  
+        document.getElementById("btn-guardar").style.display = "block"
+        document.getElementById("btn_actualizar").style.display ="none"
+        this.vaciar_formulario()
+      }
+
+      vaciar_formulario ()
+    {
+        document.getElementById("form_cliente").reset()
     }
 
 }
