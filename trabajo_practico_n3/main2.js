@@ -1,8 +1,8 @@
-import pagina2 from "./pagina2";
+import Hamburguesa from "./hamburguesa.js";
 
 
-function mostrar(){
-    const productos = new pagina2()
-    pagina2.obtener_datos()
+function mostrar() {
+    let hamburguesa = new Hamburguesa()
+    hamburguesa.obtener_producto()
 }
 mostrar()

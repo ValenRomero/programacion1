@@ -1,116 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid" style="background-color: #FFB276 ;">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color: #4F2300 ;" >Pedi tu combo preferido</a>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid" style="background-color: #FFB276 ;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: #4F2300 ;">Pedi tu combo preferido</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: #4F2300 ;">Menu</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" style="color: #4F2300 ;">
+              Cupones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"></a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" style="color: #4F2300 ;">Menu</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #4F2300 ;" >
-                  Cupones
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#"></a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" style="color: #4F2300 ;" >Novedades</a>
-              </li>
+              <li><a class="dropdown-item" href="#"></a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: #4F2300 ;">Novedades</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <form id="form_cliente">
+          <div class="mb-3">
+            <label class="form-label">Descripcion de producto</label>
+            <input id="inp_descripcion" class="form-control" type="text">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Precio de producto</label>
+            <input id="inp_precio" class="form-control" type="text">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">URL imagen proucto</label>
+            <input id="inp_imagen" class="form-control" type="text">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Detalle</label>
+            <input id="inp_detalle" class="form-control" type="text">
+          </div>
+        </form>
+        <button id="btn-guardar" class="btn btn-success">Guardar</button>
+        <button id="btn_actualizar" style="display:none;" class="btn btn-primary">Actualizar</button>
+
+      </div>
+      <div class="col-lg-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Numero</th>
+              <th>Imagen</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+        <div id="mymodal" class="modal fade" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Está seguro de llevar ejecutar esta acción?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button id="btn_eliminar" type="button" class="btn btn-danger">Eliminar</button>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-
-      <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-              <form>
-                <div class="mb-3">
-                    <label class="form-label">Descripcion de producto</label>
-                    <input id="inp_descripcion" class="form-control" type="text" >
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Precio de producto</label>
-                    <input id="inp_precio" class="form-control" type="text" >
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">URL imagen proucto</label>
-                    <input id="inp_imagen" class="form-control" type="text" >
-                </div>
-                
-                <div class="mb-3">
-                  <label class="form-label">Detalle</label>
-                  <input id="inp_detalle" class="form-control" type="text" >
-              </div>
-              </form>
-              <button  id="btn-guardar" class="btn btn-success">Guardar</button>
-              <button  id="btn_actualizar" style="display:none;" class="btn btn-primary">Actualizar</button>
-
-            </div>
-            <div class="col-lg-8">
-              <table class="table">
-                  <thead>
-                      <tr>
-                          <th>Numero</th>
-                          <th>Imagen</th>
-                          <th>Descripcion</th>
-                          <th>Precio</th>
-                          <th>Actions</th>
-                      </tr>
-                  </thead>
-                  <tbody id="tbody">
-                  </tbody>
-              </table>
-              <div id="mymodal" class="modal fade" tabindex="-1">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Eliminar</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Está seguro de llevar ejecutar esta acción?</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      <button id="btn_eliminar" type="button" class="btn btn-danger">Eliminar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
       </div>
+    </div>
 
-      <script src="main.js" type="module"></script>
-      <script src="auxiliar.js"></script>
-    
+    <script src="main.js" type="module"></script>
+    <script src="auxiliar.js"></script>
+
 </body>
+
 </html>
