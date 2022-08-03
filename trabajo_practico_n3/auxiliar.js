@@ -53,12 +53,56 @@ function crear_tablita() {
             <tr> 
                 <td>${element.descripcion}</td>
                 <td>${element.numero}</td>
-                <td>${element.precio}</td> 
+                <td>${element.precio}</td>
             </tr>`
 
             filas.push(fila)
 
         });
         document.getElementById("tablita").innerHTML = filas.join('')
+    }else{
+        document.getElementById("tablita").innerHTML = null
     }
 }
+crear_tablita()
+
+function eliminar_lista(){
+    localStorage.removeItem('pedidos');
+    crear_tablita()
+ }
+
+ document.getElementById("eliminar_lista").addEventListener("click", eliminar_lista)
+ 
+
+ function nueva_pagina() {
+
+    let pedidos = JSON.parse(localStorage.getItem("pedidos"))
+
+    let nuevo_segmento = {
+        cliente:'pepe',
+        fecha: Date(),
+        estado:'pendiente'
+    }
+
+    if ("seguimiento" in localStorage) {
+        let pedidos_principal = JSON.parse(localStorage.getItem("seguimiento"))
+        pedidos_principal.push(nuevo_segmento)
+        localStorage.setItem("seguimiento", JSON.stringify(pedidos_principal))
+
+    } else {
+
+        let pedidos_principal = []
+        pedidos_principal.push(nuevo_segmento)
+
+
+        // crear el sector de almacenamiento 
+        localStorage.setItem("seguimiento", JSON.stringify(pedidos_principal))
+    }
+
+    window.location.href = 'index3.html';
+ }
+
+ document.getElementById("btn_finalizar").addEventListener("click",nueva_pagina)
+
+ 
+ 

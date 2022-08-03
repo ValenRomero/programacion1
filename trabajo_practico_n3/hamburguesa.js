@@ -32,6 +32,7 @@ export default class Hamburguesa {
         }
 
         this.obtener_cliente()
+        window.location.href = 'index2.html';
 
     }
 
@@ -71,16 +72,17 @@ export default class Hamburguesa {
             let filas = []
             menu_principal.forEach((element, index) => {
                 let fila = `
-                <div class="card" style="width: 18rem;">
-                <img src=" ${element.imagen}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">${element.detalle}</h5>
-                  <p class="card-text">${element.precio}</p>
-                  <p class="card-text">${element.descripcion}</p>
-                  <a onclick="agregar('${element.descripcion}','${element.precio}')" href="#" class="btn btn-primary">Agregar</a>
+            <div class="col-lg-4">
+                <div class="card">
+                    <img style="height:200px" src=" ${element.imagen}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${element.detalle}</h5>
+                    <p class="card-text">${element.precio}</p>
+                    <p class="card-text">${element.descripcion}</p>
+                    <a onclick="agregar('${element.descripcion}','${element.precio}')" href="#" class="btn btn-primary">Agregar</a>
+                    </div>
                 </div>
-              </div>
-              </td>`
+              </div>`
 
                 filas.push(fila)
 
