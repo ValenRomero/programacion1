@@ -1,9 +1,11 @@
 async function obtener_datos() {
-  const datos = await fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
-  const dato_final = await datos.json()
+  const datos = await fetch(
+    "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
+  );
+  const dato_final = await datos.json();
 
-  let totales_columnas = []
-  dato_final.forEach(element => {
+  let totales_columnas = [];
+  dato_final.forEach((element) => {
     let columnas = `
         <div class="col-lg-3">
          <div class="card" >
@@ -13,10 +15,10 @@ async function obtener_datos() {
              <li class="list-group-item">${element.casa.venta}</li>
             </ul>
           </div> 
-        </div>`
+        </div>`;
 
-    totales_columnas.push(columnas)
+    totales_columnas.push(columnas);
   });
-  document.getElementById("tbl_row").innerHTML = totales_columnas.join('')
+  document.getElementById("tbl_row").innerHTML = totales_columnas.join("");
 }
-obtener_datos()
+obtener_datos();
